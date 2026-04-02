@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.env
+
+# Data/Images (ไม่ควรเอา Tiles หรือ PDF จำนวนมากขึ้น Git)
+images/
+pdf/
+*.jpg
+*.dzi
