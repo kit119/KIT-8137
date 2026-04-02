@@ -1,5 +1,5 @@
 const iaurl="https://archive.org/download/ebook_collection_ajahn_buddhadasa/images/"
-const iapdf="https://archive.org/download/ebook_collection_ajahn_buddhadasa/dhamma-ghosa/"
+const iapdf="https://archive.org/download/ebook_collection_ajahn_buddhadasa/images/"
 
 function ipdf(link){
   return " "+"<a href="+iapdf+link+" target='_blank' style='color:red' onclick='event.stopPropagation()'>[PDF]</a>"
