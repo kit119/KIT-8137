@@ -719,7 +719,7 @@ $(document).ready(function() {
     }
 
     Object.keys(groupedObj).sort().forEach(group => {
-        const groupPdfUrl = `${iapdf}/${group}.pdf`;
+        const groupPdfUrl = `${iaurl}/${group}.pdf`;
         const canonName = canonlist[group]
         finalData.push({
 		  //text: `📁 ${group} <a href="${groupPdfUrl}" target="_blank" onclick="event.stopPropagation();"> (PDF) </a>`,
