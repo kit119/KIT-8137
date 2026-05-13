@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MemFiles</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link  href="./assets/font/thsarabunnew.css" rel="stylesheet" />
+<link  href="./assets/tabulator.min.css" rel="stylesheet" />
+<link  href="./assets/style.css" rel="stylesheet" />
+
+
+<style>
+</style>
+
+</head>
+<body>
+<div id="loading" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,0.8);display:flex;justify-content:center;align-items:center;z-index:1000;">
+  <div style="font-size:2.5rem">กำลังโหลดข้อมูล...</div>
+</div>
+<div class="container">
+  <div id="table0"></div>
+  <div id="table1"></div>
+  <script src="assets/fflate.js"></script>
+  <script src="assets/tabulator.min.js"></script>   
+<script>
+index={//!วินยปิฎก !สุตฺตปิฎก !อภิธมฺปิฎก
+  "test": [
+    "!MYFILES",
+	"ร.๔๕๐ อัตราค่าจ้างแรกเข้าทำงาน",
+	"ร.๔๕๓ การขอหนังสือรับรอง",
+	"ร.๔๕๕ การจำหน่ายหนี้สูญ",
+	"ร.๔๕๖ เงินทดรอง",
+	"ร.๔๕๗ การจ้างผู้ปฏิบัติงาน #๒",
+	"ร.๔๕๘ การบริจาค #๒",
+	"ร.๔๕๙ ความรับผิดชอบเกี่ยวกับครุภัณฑ์และเครื่องมือเครื่องใช้",
+	"ร.๔๖๐ การจัดซื้อจัดจ้างและการบริหารพัสดุที่เกี่ยวกับการพาณิชย์โดยตรง #๖",
+	"ร.๔๖๑ การจัดซื้อจัดจ้างและการบริหารพัสดุที่เกี่ยวกับการพาณิชย์โดยตรง #๗",
+	"ร.๔๖๒ ค่าใช้จ่ายเดินทางในประเทศ #๓",
+	"ร.๔๖๔ หลักเกณฑ์และอัตราค่ารักษาพยาบาลกรณีผู้ป่วยฯ ไวรัสโคโรนา 2019 หรือโรคโควิด 19",
+	"ร.๔๖๕ การประเมินผลบุคคล #๑",
+	"ร.๔๖๖ อุบัติเหตุเกี่ยวกับยานพาหนะ #๒",
+	"ร.๔๖๗ ทรัพย์สินสูญหายหรือเสียหาย #๓",
+	"ร.๔๖๙ การประกันภัย",
+	"ร.๔๗๑ อุปกรณ์คุ้มครองความปลอดภัยส่วนบุคคล #๑",
+	"ร.๔๗๒ การบริหารงบประมาณ",
+	"ร.๔๗๓ การใช้คาร์บอนเครดิตและเครดิตการผลิตพลังงานหมุนเวียน",
+	"ร.๔๗๕ การจัดซื้อจัดจ้างและการบริหารพัสดุที่เกี่ยวกับการพาณิชย์โดยตรง #๙",
+	"ร.๔๗๘ การวางเงินค่าทดแทน #๑",
+	"ร.๔๗๙ การจ่ายค่าใช้จ่ายในการรักษาพยาบาลคนไข้นอกให้สถานพยาบาลของทางราชการโดยตรง",
+	"ร.๔๘๐ การจัดการข้อร้องเรียน",
+	"ร.๔๘๒ บัตรประจำตัว",
+	"ร.๔๘๔ การขายคาร์บอนเครดิต #๑",
+	"ร.๔๘๕ การซื้อขายเครดิตการผลิตพลังงานหมุนเวียน #๑",
+	"ร.๔๘๗ หลักฐานการเบิกจ่ายเงิน #๑",
+	"ร.๔๘๘ การพัฒนาบุคคล",
+	"ร.๔๘๙ อัตราค่าจ้างขั้นต่ำ",
+	"ร.๔๙๐ การสำรวจและจัดกรรมสิทธิ์ที่ดินระบบโครงข่ายพลังงาน #๑",
+	"ร.๔๙๑ การจ่ายค่าทดแทนสำหรับงานปรับปรุงยกระดับระบบโครงข่ายไฟฟ้า #๑",
+	"ร.๔๙๒ แนวทางการปฏิบัติงานเกี่ยวกับการกำหนดราคากลางงานซื้อ งานจ้าง งานจ้างที่ปรึกษา หรืองานจ้างออกแบบหรือควบคุมงานก่อสร้าง",
+	"ร.๔๙๖ บุคคล",
+	"ร.๔๙๗ การจัดซื้อจัดจ้างและการบริหารพัสดุที่เกี่ยวกับการพาณิชย์โดยตรง",
+	"ร.๔๙๘ การจำหน่ายหนี้สูญ #๑",
+	"ร.๔๙๙ การจ่ายเงินเพิ่มและการเรียกเงินคืนค่างานตามสัญญาแบบปรับราคาได้ (ค่า K) #๑",
+	"ร.๕๐๐ การตั้งคณะกรรมการสอบหาข้อเท็จจริง #๑",
+	"ร.๕๐๑ ค่าใช้จ่ายสำหรับหน่วยงานหรือบุคคลภายนอก #๖",
+	"ร.๕๐๒ การรับเงินหรือทรัพย์สินที่มีผู้บริจาคให้ กฟผ. #๑",
+	"ร.๕๐๓ เงินเพิ่มพิเศษในการลงนามขออนุญาตและรับรองความปลอดภัยสำหรับผู้ประกอบวิชาชีพวิศวกรรมควบคุม",
+	"ร.๕๐๔ บุคคล #๑",
+	"ร.๕๐๕ การบริจาค",
+	"ร.๕๐๖ การสื่อสารองค์การ การสร้างความสัมพันธ์ และความรับผิดชอบต่อสังคม #๒",
+	"ร.๔๑๗ การจ่ายเงินเพิ่มและการเรียกเงินคืนค่างานตามสัญญาแบบปรับราคาได้ (ค่า K)",
+	"ร.๕๐๗ บุคคล #๒",
+	"ร.๕๐๘ ค่าใช้จ่ายเดินทางในประเทศ #๔",
+	"ร.๕๐๙ บัตรประจำตัว #๑",
+	"ร.๕๑๐ การจ่ายเงินเพิ่มและการเรียกเงินคืนค่างานตามสัญญาแบบปรับราคาได้ (ค่า K)",
+	"ร.๓๒๐ ค่าใช้จ่ายเดินทางในประเทศ",
+	"ร.๓๖๒ อุปกรณ์สื่อสาร และค่าโทรศัพท์เคลื่อนที่",
+	"ร.๓๙๕ อุปกรณ์สื่อสาร อุปกรณ์โทรศัพท์ และค่าโทรศัพท์เคลื่อนที่",
+	"ร.๔๑๒ อุปกรณ์สื่อสาร อุปกรณ์โทรศัพท์ และค่าโทรศัพท์เคลื่อนที่ #๑",
+	"ร.๕๑๑ การซื้อขายเครดิตการผลิตพลังงานหมุนเวียน #๒",
+	"ร.๕๑๒ เงินช่วยเหลือในการรักษาพยาบาล",
+	"ร.๕๑๓ การจ่ายค่ารักษาพยาบาลคนไข้นอกให้สถานพยาบาลของทางราชการโดยตรง",
+	"ร.๕๑๔ การจ่ายค่ารักษาพยาบาลให้สถานพยาบาลเอกชนโดยตรง",
+	"ร.๕๑๕ เงินช่วยเหลือค่ารักษาพยาบาลผู้ป่วยนอกของคลินิกและโรงพยาบาลเอกชน.",
+	"ร.๕๑๖ หลักเกณฑ์และอัตราค่ารักษาพยาบาลกรณีผู้ป่วยฯ ไวรัสโคโรนา 2019 หรือโรคโควิด 19",
+	"ร.๕๑๗ กำหนดประเภทและอัตราค่าอวัยวะเทียม และอุปกรณ์ในการบำบัดรักษาโรค",
+	"ร.๕๑๘ เงินยืมทดรองเพื่อเป็นค่ารักษาพยาบาล",
+	"ร.๕๑๙ การจัดซื้อจัดจ้างและการบริหารพัสดุที่เกี่ยวกับการพาณิชย์โดยตรง #๑",
+	"ร.๕๒๐ อัตราค่าจ้างขั้นต่ำ",
+	"ร.๕๒๑ ค่าใช้จ่ายเดินทางต่างประเทศ (แก้ไขเพิ่มเติมครั้งที่2",
+	"ร.๕๒๒ บุคคล #๓",
+	"ร.๕๒๓ การจัดการอุบัติการณ์.",
+	"ร.๕๒๔ การสงเคราะห์ผู้ปฏิบัติงานที่ประสบอันตรายหรือเจ็บป่วยเพราะเหตุปฏิบัติงานให้แก่ กฟผ. #๑",
+	"ร.๕๒๕ ทรัพย์สินสูญหายเสียหาย #๔",
+	"ร.๕๒๖ อุบัติเหตุเกี่ยวกับยานพาหนะ #๓",
+	"ร.๕๒๗ การประกันภัย #๑",
+	"ร.๕๒๘ การสำรวจและจัดกรรมสิทธิ์ที่ดินระบบโครงข่ายพลังงาน",
+	"ร.๕๒๙ เงินยืมทดรอง #๒",
+	"ร.๕๓๐ หมายเลขประจำตัวผู้ปฏิบัติงานและบุคคลภายนอก #๑",
+	"ร.๔๗ เงินช่วยเหลือการศึกษาของบุตร",
+	"ร.๕๓๑ การขอใช้รถ",
+	"ร.๕๓๒ สวัสดิการด้านกีฬาและบันเทิง #๑",
+	"ร.๕๓๓ บุคคล #๔",
+	"ร.๕๓๔ อุบัติเหตุเกี่ยวกับยานพาหนะ #๔",
+	"ร.๕๓๕ บุคคล #5",
+	"ร.๕๓๖ การสงเคราะห์ผู้ปฏิบัติงานที่ประสบอันตรายหรือเจ็บป่วยเพราะเหตุปฏิบัติงานให้แก่ กฟผ. #๒",
+	"ร.๕๓๗ เงินช่วยเหลือในการคลอดบุตร",
+	"ร.๕๓๘ เงินช่วยเหลือบุตร",
+	"ร.๕๓๑ การขอใช้รถ",
+	"ร.๕๓๙ การแก้ไขระเบียบปฏิบัติให้สอดคล้องกับโครงสายการบังคับบัญชาของสายงาน รปส. และ รพส.",
+	"ร.๕๔๐ การบริหารงานวิจัยและพัฒนา นวัตกรรม สิ่งประดิษฐ์ และทรัพย์สินทางปัญญา #๒",
+	"ร.๕๔๑ เงินช่วยเหลือค่ารักษาพยาบาลผู้ป่วยนอกของคลินิกและโรงพยาบาลเอกชน #๑",
+	"ร.๕๔๒ เงินเพิ่มพิเศษสำหรับผู้ปฏิบัติงานกะ (SHIFT PREMIUM) #๑",
+	"ร.๕๔๓ ระเบียบเกี่ยวกับเครื่องจักรกล #๑",
+	"ร.๕๔๔ การใช้อาวุธปืนและเครื่องกระสุนปืน พ.ศ. ๒๕๖๗",
+	"ร.๕๔๕ เงินยืมทดรอง #๓",
+	"ร.๕๔๖ การบริหารจัดการลิกไนต์และวัตถุเคมีจากลิกไนต์",
+	"ร.๕๔๗ การให้พนักงานไปปฏิบัติงานที่บริษัทในเครือ กฟผ",
+	"ร.๕๔๘ อัตราค่าจ้างขั้นต่ำ",
+	"ร.๕๔๙ ค่าใช้จ่ายในการฝึกอบรม",
+	"ร.๕๕๐ เงินช่วยเหลือการศึกษาของบุตร",
+	"ร.๕๕๑ การให้บริการไฟฟ้าสีเขียว (UTILITY GREEN TARIFF)",
+	"ร.๕๕๒ การเบิกจ่ายเงินเพิ่มพิเศษค่าฝีมือช่างเชื่อม",
+	"ร.๕๕๓ การจ่ายเงินเพิ่มการครองชีพชั่วคราว #๒",
+	"ร.๕๕๔ บุคคล #๖",
+	"ร.๕๕๕ ค่าใช้จ่ายในการจัดงาน",
+	"ร.๕๕๖ หลักเกณฑ์การใช้พัสดุที่ผลิตภายในประเทศ",
+	"ร.๕๕๗ บุคคล #๗",
+	"ร.๕๕๘ การแก้ไขระเบียบ และคำสั่งต่าง ๆ ให้สอดคล้องกับโครงสร้างองค์การใหม่",
+	"ร.๕๕๙ ค่าเช่าบ้านพนักงาน #๑",
+	"ร.๕๖๐ การปฏิบัติกิจการที่เกี่ยวกับคดี #๑",
+	"ร.๕๖๑ อัตราค่าจ้างแรกเข้าทำงาน",
+	"ร.๕๖๒ การสำรวจและจัดกรรมสิทธิ์ที่ดินระบบโครงข่ายพลังงาน #๑",
+	"ร.๕๖๓ การวางเงินค่าทดแทน #๒",
+	"ร.๕๖๔ การจัดซื้อจัดจ้างและการบริหารพัสดุที่เกี่ยวกับการพาณิชย์โดยตรง #๒",
+    "!SAFETY",
+    "ค.๒๗ ข้อกำหนดมาตรฐานช่องรหัสอักษรและสีที่ใช้แสดงยกของตัวนำไฟฟ้าสายกลางและสายดิน",
+    "ค.๓๘ การกำหนดเขตปลอดภัย",
+    "การใช้สัญลักษณ์สีสำหรับอุปกรณ์และท่อฯ สำหรับโรงไฟฟ้าพลังความร้อน",
+    "การใช้สัญลักษณ์สีสำหรับอุปกรณ์และท่อฯ สำหรับโรงไฟฟ้าพลังน้ำ",
+    "ค.๒๐๗ ข้อกำหนดมาตรฐานสำหรับไฟสัญญาณ สัญญาณเตือน และปุ่มควบคุม",
+    "ร.๖๖ ข้อกำหนดด้านการแขวนป้ายเพื่อความปลอดภัย",
+    "ร.๑๐๐ มาตรฐานเครื่องหมายความปลอดภัย",
+    "ร.๑๐๗ มาตรฐานระบบดับเพลิงสถานีไฟฟ้าแรงสูง",
+    "ร.๑๒๙ ข้อกำหนดสำหรับการดำเนินงานด้านความปลอดภัยในการทำงานเกี่ยวกับงานก่อสร้าง",
+    "ร.๑๕๑ การใช้สัญลักษณ์สีสำหรับอุปกรณ์และท่อที่มีของไหลสำหรับโรงไฟฟ้าพลังความร้อน",
+    "ร.๑๖๔ มาตรฐานระบบป้องกันและระงับอัคคีภัย ศูนย์ควบคุมกำลังไฟฟ้า",
+    "ร.๑๖๘ การใช้สัญลักษณ์สีสำหรับอุปกรณ์และท่อที่มีของไหลสำหรับโรงไฟฟ้าพลังน้ำ",
+    "ร.๑๗๐ มาตรฐานการจัดการความปลอดภัย อาชีวอนามัยและสภาพแวดล้อมในการทำงาน",
+    "ร.๓๑๕ อุปกรณ์คุ้มครองความปลอดภัยส่วนบุคคล",
+    "ร.๓๙๖ การจัดการความปลอดภัยผู้รับจ้าง",
+    "ร.๔๑๖ การขออนุญาตเข้าทำงานที่ทำให้เกิดความร้อนฯ ประกายไฟ และ ที่อับอากาศ",
+    "ร.๔๗๑ อุปกรณ์คุ้มครองความปลอดภัยส่วนบุคค #1",
+    "ร.๕๒๓ การจัดการอุบัติการณ์",
+	"รวมข้อหารือปัญหากฎหมายความปลอดภัยในการทำงาน ปี 2568",
+	],
+  "term": ["กวดขัน", "กอบกู้", "กะเกณฑ์", "กักขัง", "กัลปนา", "กล่าวโทษ", "กักตุน", "กัตติกา", "กิตติมศักดิ์", "เกษียณอายุ","เกษียณหนังสือ", "เกณฑ์ทหาร", "เก็บกู้", "เก็บรักษา", "เกียรติยศ", "ใกล้ชิด", "ขอบข่าย", "ขอลดหย่อน", "ขัดขวาง", "ขัดแย้ง","ขัดล้าง", "ขัดสมาธิ", "ขันอาสา", "ข้าราชการ", "ขยายผล", "ข้อกำหนด", "ข้อกล่าวหา", "ข้อตกลง", "ข้อบังคับ", "ข้อบัญญัติ","ข้อพึงระวัง", "ข้อน่าสังเกต", "ข้อพิพาท", "ข้อเท็จจริง", "ขัดจังหวะ", "ขาดทอดตลาด", "ขาดนัด", "ขาดแคลน", "ขายฝาก", "ขายทอดตลาด","ขีดจำกัด", "เขตอำนาจ", "แขนง", "โฆษณา", "คณะกรรมการ", "คณะทำงาน", "คณะอนุกรรมการ", "คดีแพ่ง", "คดีอาญา", "คัดกรอง","คัดค้าน", "คัดเลือก", "คัดลอก", "คัดสำเนา", "คำสั่ง", "คำขอ", "คำขอขมา", "คำชี้แจง", "คำนิยาม", "คำบรรยาย","คำปฏิญาณ", "คำปรารภ", "คำพิพากษา", "คำร้อง", "คำรับรอง", "คำวิงวอน", "คำวินิจฉัย", "คำสั่งการ", "คำแถลง", "คำอธิบาย","คุมขัง", "คุมประพฤติ", "คุ้มครอง", "คุณภาพ", "คู่ฉบับ", "คู่สัญญา", "คู่มือ", "เคหสถาน", "เครือข่าย", "เครื่องราชอิสริยาภรณ์","เครื่องหมาย", "เครื่องมือ", "เงินกู้", "เงินชดเชย", "เงินช่วยพิเศษ", "เงินดาวน์", "เงินตรา", "เงินโบนัส", "เงินปันผล", "เงินเดือน","เงินบำนาญ", "เงินบำเหน็จ", "เงินประกัน", "เงินบริจาค", "เงินมัดจำ", "เงินรายได้", "เงินสวัสดิการ", "เงินสะสม", "เงินอุดหนุน", "งบประมาณ","งบกระแสเงินสด", "งบการเงิน", "งบดุล", "งบรายจ่าย", "งบลงทุน", "งบประมาณแผ่นดิน", "งานสารบรรณ", "งานธุรการ", "จดทะเบียน", "จดจารึก","จดบันทึก", "จดหมาย", "จรรยาบรรณ", "จริยธรรม", "จลาจล", "จ้างงาน", "จ้างทำของ", "จ้างเหมา", "จัดซื้อ", "จัดจ้าง","จัดตั้ง", "จัดการ", "จัดสรร", "จัดเก็บ", "จัดเตรียม", "จัดลำดับ", "จัดระเบียบ", "จัดหา", "จ่าหน้า", "จำคุก","จำนอง", "จำหน่าย", "จำแนก", "จำลอง", "จุดตรวจ", "จุดประสงค์", "จุลสาร", "เจตนา", "เจรจา", "เจริญสัมพันธไมตรี","เจ้าหน้าที่", "เจ้าพนักงาน", "แจ้งความ", "แจ้งความประสงค์", "โฉนด", "ชดใช้", "ชดเชย", "ชลประทาน", "ช่วยราชการ", "ช่องทาง","ชั่งน้ำหนัก", "ชี้แจง", "ชี้ทิศทาง", "ชี้ขาด", "ชุดปฏิบัติการ", "เช่าช่วง", "เช่าซื้อ", "เชิงกราน", "เชิงอรรถ", "เชิดชู","ซ่อมแซม", "ซักค้าน", "ซักไซ้", "ซักซ้อม", "ฐานข้อมูล", "ฐานความผิด", "ฐานะ", "ณ ที่นี้", "ดรรชนี", "ตรวจการ","ตรวจคนเข้าเมือง", "ตรวจสอบ", "ตรวจรับ", "ตริตรอง", "ตราสิน", "ตราสาร", "ตักเตือน", "ตัดสิน", "ติดตั้ง", "ติดตาม","ติดต่อ", "ตอบข้อซักถาม", "ตอบโต้", "ตอบรับ", "ต่อเติม", "ต้อนรับ", "ต้อเนื้อ", "ตระหนัก", "ตระเวน", "ตรรกะ","ตาราง", "ตำรา", "ตำแหน่ง", "ตุลาการ", "เตรียมพร้อม", "ถอดถอน", "ถอนคำพูด", "ถอนตัว", "ถอนสิทธิ", "ถวายการรักษา","ถ้อยคำ", "ถัดไป", "แถลงการณ์", "แถลงข่าว", "ถ่ายโอน", "ทดรองจ่าย", "ทบทวน", "ทนทาน", "ทนาย", "ทรัพยากร","ทรัพยากรบุคคล", "ทรัพย์สิน", "ทราบ", "ทวีคูณ", "ทัศนคติ", "ทัศนวิสัย", "ทาบทาม", "ทำความตกลง", "ทำนบ", "ทำสัญญา","ทำสำเนา", "ที่ดิน", "ที่ประชุม", "ที่ปรึกษา", "ที่พักอาศัย", "ทุนการศึกษา", "ทุนสำรอง", "ทุจริต", "ทุพพลภาพ", "เทคโนโลยี","เท็จ", "เทศบาล", "โทษทัณฑ์", "โทรคมนาคม", "โทรเลข", "ไทเกอร์", "ธนบัตร", "ธรรมมาภิบาล", "ธรรมานุรักษ์", "ธุรกรรม","นโยบาย", "นอกเวลา", "นองเลือด", "นักวิชาการ", "นักศึกษา", "นัดหมาย", "นิติกร", "นิติบุคคล", "นิเทศ", "นามแฝง","นามสงเคราะห์", "นายจ้าง", "บริบท", "บริจาค", "บริษัท", "บรรจุ", "บรรเทา", "บรรทัดฐาน", "บรรยาย", "บรรลุนิติภาวะ","บริวาร", "บริหาร", "บวก", "บังคับ", "บังคับคดี", "บัญชี", "บัญชา", "บัตรเครดิต", "บันทึก", "บำนาญ","บำเหน็จ", "บุคคล", "บุคลากร", "เบี้ยเลี้ยง", "เบี้ยหวัด", "เบิกความ", "เบิกจ่าย", "เบื้องต้น", "ปฏิคม", "ปฏิบัติตาม","ปฏิบัติหน้าที่", "ปฏิรูป", "ปฏิเสธ", "ปฐมนิเทศ", "ประเมิน", "ประมูล", "ประมวล", "ประเพณี", "ประมาท", "ประยุกต์","ประวัติ", "ประหยัด", "ปราศจาก", "ปรับปรุง", "ปรับแต่ง", "ประทับตรา", "ประจำการ", "ประชาสัมพันธ์", "ประชุม", "ประชากร","ประกวดราคา", "ประกาศ", "ประกัน", "ประกันสังคม", "ปรึกษา", "ปราบปราม", "ปรับอาสนะ", "ป้าย", "โปรดพิจารณา", "ปะทะ","ปัญญา", "ปันผล", "ป่าไม้", "เป้าหมาย", "เป็นธรรม", "เปิดเผย", "แปลง", "แผนงาน", "แผนภูมิ", "แผ่นดิน","พงศาวดาร", "พนักงาน", "พยาน", "พยากรณ์", "พยาบาล", "พรรณนา", "พร้อมเพรียง", "พหุภาคี", "พัสดุ", "พิจารณา","พิธีการ", "พินัยกรรม", "พินิจ", "พิเศษ", "พิสูจน์", "พื้นที่", "เพิกถอน", "เพิ่มพูน", "แพ่ง", "โพย","ฟ้องร้อง", "ฟื้นฟู", "ภาคทัณฑ์", "ภาษี", "ภาษีมูลค่าเพิ่ม", "ภาษีเงินได้", "ภาระ", "ภารกิจ", "ภายใน", "ภายนอก","มติ", "มรดก", "มรณภาพ", "มลพิษ", "มหาชน", "มติที่ประชุม", "มัธยัสถ์", "มาตรการ", "มาตรฐาน", "มิตรภาพ","มูลนิธิ", "เมตตา", "ย้อนกลับ", "ย้อนหลัง", "ยอมรับ", "ยักยอก", "ยั่งยืน", "ยัน", "ยามวิกาล", "ย้าย","ยื่นคำร้อง", "ยุติ", "ยุทธศาสตร์", "ยุทธวิธี", "เยียวยา", "ยกเลิก", "ยกเว้น", "ยอดคงเหลือ", "ระดมทุน", "ระบบ","ระเบียบ", "ระมัดระวัง", "ระยะเวลา", "ระวาง", "ระงับ", "รักษาราชการ", "รักษาความปลอดภัย", "รักษาการ", "รับรอง", "รับทราบ","รับผิดชอบ", "รับสารภาพ", "รายจ่าย", "รายได้", "รายงาน", "รายรับ", "รายการ", "รื้อถอน", "รุ่งเรือง", "รูปพรรณ","รูปแบบ", "ร้องเรียน", "ละทิ้ง", "ละเมิด", "ละเว้น", "ลงนาม", "ลงบันทึก", "ลงโทษ", "ลงทะเบียน", "ล่วงเกิน","ล่วงละเมิด", "ล่วงเวลา", "ลวดหนาม", "ลักทรัพย์", "ลักลอบ", "ลางาน", "ลาออก", "ลำดับ", "ลิขสิทธิ์", "ลูกจ้าง","เลื่อน", "เลื่อนตำแหน่ง", "เลขานุการ", "เลิกจ้าง", "วงเงิน", "วงจร", "วาระ", "วิกฤต", "วินิจฉัย", "วินัย","วิทยากร", "วิธีปฏิบัติ", "วิธีกระบวนการ", "วิสัยทัศน์", "วิเคราะห์", "วิจัย", "วิจารณ์", "วิชาชีพ", "วิศวกรรม", "วิสามัญ","วัตถุ", "วัตถุประสงค์", "วารสาร", "วาทศิลป์", "ว่างงาน", "ว่าจ้าง", "วาระซ่อนเร้น", "เวียน", "เว้นแต่", "ไว้วางใจ","ศาล", "ศาสนา", "ศิลปะ", "ศูนย์", "เศรษฐกิจ", "สถาบัน", "สถานประกอบการ", "สถานะ", "สถิติ", "สนธิสัญญา","สนับสนุน", "สม่ำเสมอ", "สมานฉันท์", "สมาคม", "สมทบ", "สมบัติ", "สมบูรณ์", "สยบ", "สรุป", "สร้างสรรค์","สอบถาม", "สอบทาน", "สอบสวน", "สวัสดิการ", "สวัสดิภาพ", "สหกรณ์", "สอดส่อง", "สอดคล้อง", "สะสาง", "สะสม","สัญญา", "สัญชาติ", "สัญจร", "สัดส่วน", "สัมปทาน", "สัมมนา", "สัมพรรค", "สารบรรณ", "สาธารณูปโภค", "สาธารณะ","สำนักงาน", "สำนักพิมพ์", "สำเนา", "สำรวจ", "สำเร็จ", "สิทธิ", "สิทธิบัตร", "สินทรัพย์", "สินค้า", "สินบน","สินไหม", "สืบเนื่อง", "สืบสวน", "สืบพยาน", "สื่อสาร", "สื่อมวลชน", "สวัสดิการ", "ส่วนราชการ", "ส่วนตัว", "ส่งออก","ส่งมอบ", "หน่วยงาน", "หนังสือ", "หนังสือเวียน", "หนังสือสั่งการ", "หนี้สิน", "หน้าภาพ", "หน้าที่", "หมิ่นประมาท", "หมดอายุ","หมายจับ", "หมายกำหนดการ", "หมายเรียก", "หลักการ", "หลักเกณฑ์", "หลักฐาน", "หลักสูตร", "หลักแหล่ง", "หลีกเลี่ยง", "หอจดหมายเหตุ","หักลบ", "หักภาษี", "ห้างหุ้นส่วน", "ห้าม", "ห่วงโซ่", "หุ้น", "หุ้นส่วน", "เหตุการณ์", "เหตุสุดวิสัย", "เหรัญญิก","เหมาะสม", "องค์กร", "องค์การ", "อนุมัติ", "อนุกรรมการ", "อนุสัญญา", "อนุญาต", "อนุรักษ์", "อภิปราย", "อภิธาน","อรรถกถา", "อสังหาริมทรัพย์", "อสังหาริมทรัพย์", "อัครราชทูต", "อังคาร", "อัคคีภัย", "อัตรา", "อัตลักษณ์", "อันตราย", "อัปยศ","อัธยาศัย", "อากัปกิริยา", "อากาศ", "อาคาร", "อาชญากรรม", "อาชีพ", "อาสาสมัคร", "อำนาจ", "อำนวยการ", "อุทธรณ์","อุทกภัย", "อุปสรรค", "อุปกรณ์", "อุปโภค", "อุปถัมภ์", "เอกสาร", "เอกภาพ", "เอกสิทธิ์", "เอื้อเฟื้อ", "โอนย้าย"],
+  "none": [],
+}
+
+istyle="style='height:25px;vertical-align:middle'>"
+
+data={
+  "data":	["data",   "data",index.test,],
+  "regulation":	["regulation",   "Regulation",index.test,],
+  "completion":	["completion",   "Completion",index.test,],
+}
+
+function opt(a1,a2){return '<option value='+a1+'>'+a2+'</option>'}
+selectBooks = opt("","📚")+ 
+'<optgroup label="ระเบียบ/ข้อบังคับ">'+
+  opt("summary","สรุปความ")+
+'</optgroup>'+
+'</select>&nbsp;'
+
+// conv.py input.txt [-s|--source] [-t|--target] [-e|--encoding] [-l|--list] [-h|--help] [-o|]
+//*:
+//[।॥]|</?\w+>|</?pb[^>]*>
+
+</script>   
+</div>
+
+
+<script>
+filterValue = ""
+tables={0:null,1:null}
+tableHead=[]
+tableElements = {0:document.getElementById("table0"),1:document.getElementById("table1")}
+layout="fitDataStretch" //"fitDataTable" "fitData" "fitColumns" "fitDataFill"
+fontColor = "color:white;color:black;"
+fontWeight = "bold;"
+
+setTable(0,data.data,1)
+setTable(1,data.data,1)
+
+function debounce(func, timeout = 300){
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { func.apply(this, args); }, timeout);
+  };
+}
+
+theme = 0
+function switchTheme() {theme++
+  allTheme=[["white","black"],["black","white"],["#F5ECD9","#4B3B2A"],["#F0FFF0","#333333"]]
+  if(theme>=allTheme.length){theme=0}
+  fontColor="color:"+allTheme[theme][0]+";color:"+allTheme[theme][1]+";"
+  filterTable(0,""),filterTable(1,"")
+}
+
+function arabicToThai(number) {
+  const thaiNumerals = ['๐','๑','๒','๓','๔','๕','๖','๗','๘','๙'];
+  return number.toString().replace(/[0-9]/g, function(digit) {
+    return thaiNumerals[parseInt(digit)];
+  });
+}
+
+async function loadLzmaJson(url) {
+  const resp = await fetch(url);
+  const arrayBuffer = await resp.arrayBuffer();
+  const compressed = new Uint8Array(arrayBuffer);
+  return new Promise((resolve, reject) => {
+    LZMA.decompress(compressed, (result, error) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(JSON.parse(result));
+      }
+    });
+  });
+}
+
+async function loadGzippedJson(url) {
+  const response = await fetch(url);
+  const compressedData = await response.arrayBuffer();
+  const ds = new DecompressionStream('gzip');
+  const decompressedStream = new Response(compressedData).body.pipeThrough(ds);
+  const result = await new Response(decompressedStream).json();
+  return result;
+}
+
+async function loadZippedJson(url) {
+  const resp = await fetch(url);
+  const buffer = await resp.arrayBuffer();
+  const zipped = new Uint8Array(buffer);
+  const unzipped = fflate.unzipSync(zipped); // unzip all files
+  const fileNames = Object.keys(unzipped);
+  const json = JSON.parse(new TextDecoder().decode(unzipped[fileNames[0]]));
+  return json;
+}
+
+const shortkeyInput = document.addEventListener('keydown',(event) => {
+  const keyActions = {
+    'ArrowRight':()=>{toPage(0, +1);toPage(1, +1) },
+    'ArrowLeft' :()=>{toPage(0, -1);toPage(1, -1) },
+    'ArrowUp'   :()=>{toPage(0,+10);toPage(1,+10) },
+    'ArrowDown' :()=>{toPage(0,-10);toPage(1,-10) },
+    'PageUp'    :()=>{toPage(0,+50);toPage(1,+50) },
+    'PageDown'  :()=>{toPage(0,-50);toPage(1,-50) },
+    'Home':()=>{tables[0].setPage('first');tables[1].setPage('first')},
+    'End' :()=>{tables[0].setPage('last');tables[1].setPage('last')},
+    '+'	  :()=>{fontSize(0,+1),fontSize(1,+1)},
+    '-'	  :()=>{fontSize(0,-1),fontSize(1,-1)},
+    ' '	  :()=>{toPage(0, +1);toPage(1, +1) },
+    'Tab' : switchTheme,
+  };
+  
+  if (keyActions[event.key]) keyActions[event.key]();
+})
+
+function column(id,text){
+  return {
+    title:text,titleFormatter:"html",field:"content",
+    headerHozAlign:"center",headerSort:false,
+    tooltip:tooltip,cellClick:function(e,cell){cellClick(e,cell,id)}, //formatter:"textarea",
+    formatter: function (cell, formatterParams) {        
+      let value = cell.getValue()
+
+	  if (cell.getData().volume === 0) {return value;}
+      
+      if (typeof value === "string") {
+        value = value.replace(/(\[.*?\])/g,'<span style="color:red;">$1</span>');
+        value = value.replace(/(\(.*?\))/g,'<span style="color:blue;">$1</span>');
+        value = value.replace(/(\{.*?\})/g,'<span style="color:green;">$1</span>');
+      }
+      
+      if (filterValue && typeof value === 'string') {
+		let re = new RegExp(`(${filterValue})`,"gi");
+		hilight="background-color:yellow;"
+		value = value.replace(re, '<span style='+hilight+'>$1</span>');
+      } 
+      return '<div style="background-'+fontColor+' font-weight:'+fontWeight+'white-space:pre-wrap;">'+value+'</div>';
+    },
+  }
+}
+
+
+function items(){
+  return {title:"[.]",field:"items",width:'10px',formatter:"textarea",tooltip:tooltip,cellClick:cellClick}
+}
+
+function tooltip(mouse,cell){v=cell.getData()
+  return  ""//"เล่ม " + parseInt(v.volume) + " ข้อ " + parseInt(v.items) + " หน้า " + parseInt(v.page);
+}
+
+function cellClick(e,cell,tableId){
+  //console.log('Clicked table:', tableId)
+  e.stopPropagation()
+  //v=cell.getData(),item=v.items,idx=item.indexOf(' ')
+  //if(idx!==-1){item=item.substring(0,idx)} 
+  //found1=0,found2=0 
+}
+
+function langs(){
+  return {"default":{
+    "pagination":{page_size:"",page_title:"หน้าที่",
+    first:"|◀",first_title:"หน้าแรก",last: "▶|",last_title:"หน้าสุดท้าย",
+     prev:"◀",prev_title:"หน้าก่อนนี้",next: "▶",next_title:"หน้าถัดไป",
+  counter:{"showing":"","of":"/","rows":"&nbsp;","pages":"&nbsp;",},
+     },
+  }} 
+}
+
+function toPage(id,pg) {
+  currentPage=tables[id].getPage()
+  if(typeof pg==='string'){currentPage=0}
+  tables[id].setPage(currentPage+parseInt(pg))
+  updateHeaderTitle(id)
+}
+
+function switchTable(id,book){
+  if(book.includes(",")){
+	setTable(0,data[book.split(",")[0]],1)
+	setTable(1,data[book.split(",")[1]],1)
+  }
+  else{setTable(id,data[book],1)}
+}
+
+function fontFamily(id,family){
+  document.getElementById("table"+id).style.fontFamily = family+",sans-serif";
+}
+
+cellFontSize = 15
+function fontSize(id,delta) {
+  console.log(cellFontSize,id,delta)
+  cellFontSize += delta;
+  if (cellFontSize < 10) cellFontSize = 10;
+  document.getElementById("table"+id).style.fontSize = cellFontSize+"px";
+}
+
+function filterTable(id,val){//console.log(id,val)
+  filterValue = val
+  if(val===''){filterValue = "",tables[id].clearFilter(),tables[id].redraw(true)}
+  if(Number.isInteger(parseInt(val))&&!val.includes(':')){tables[id].setPage(val)}
+  if(typeof val === "string" && !Number.isInteger(parseInt(val))) {
+    filterValue=val
+    tables[id].setFilter([{field:"content",type:"like",value:val}])
+  }
+  if(val.includes('/')){val=val.split('/')
+    if(/^[1-9]$/.test(val[0])){val[0]='0'+val[0]}
+
+    tables[id].setFilter([ 
+      {field:"volume",type:"=",value:val[0]},
+      {field:"items",type:"like",value:val[1]}, 
+    ])
+  }
+  
+  tables[id].redraw(true)
+  
+  tables[id].on("dataFiltered", function(filters, rows){
+    matchCount = 0 //reset
+    filters.forEach(filter => {if(filter.field === "content") {filterValue = filter.value}})
+    rows.forEach(row => {
+      let data = row.getData();
+      if (data.content && filterValue) {
+        let re = new RegExp(`${filterValue}`, "gi");
+        let matches = (data.content.match(re) || []).length;
+        matchCount += matches;
+      }
+    })  //console.log("Total matches:", matchCount);
+    tables[id].redraw(true)
+  })
+  updateHeaderTitle(id)
+}
+
+function paginationCounter(pageSize,currentRow,currentPage,totalRows,totalPages){
+  return currentPage+"/"+totalPages
+}
+
+function updateHeaderTitle(id) {
+  if (!tables[id]) return;
+  const currentPage = tables[id].getPage()
+  const currentData = tables[id].getData("active")[currentPage - 1];
+  if (!currentData) return;
+  
+  const originalTitle = tables[id].options.columns[0].title;
+  const volume = parseInt(currentData.volume) || 0;
+
+  let volumeName;
+  const filteredTableHead = tableHead[id].filter(v => !(v.includes('{') || v.includes('!')));
+  
+  if (currentData.volume === 0) {
+	if(currentData.content.includes("สารบัญ")){volumeName = "สารบัญ"}
+	if(currentData.content.includes("อภิธานศัพท์")){volumeName = "อภิธานศัพท์"}
+  } 
+  else {volumeName = filteredTableHead[volume-1] || tableHead[id][volume-1]}
+  
+  const page = parseInt(currentData.page) || 0;
+  const pageThai = arabicToThai(page)
+  const items = currentData.items !== undefined && currentData.items !== null 
+    ? currentData.items : 0;
+
+//	if(item.text.length>50){item.text=item.text.substring(0, 50)+"..."}
+  const newTitle = `<div style="text-align:center;line-height:1.2;">
+	<div>${originalTitle}</div>
+	<small style="font-size:0.90rem;">
+	  ${volumeName}. / ${pageThai}
+	</small>
+  </div>`;
+  tables[id].updateColumnDefinition("content",{title:newTitle,titleFormatter:"html"});
+}
+
+function createTOCContent(volumes,tableId,itemsPerPage=35) {
+  if (!volumes) return [];
+  let tocItems=[],itemCounter=0,headCounter=0,currentHeader=null;
+  // First process all volumes to extract items and headers
+  const processedItems = [];
+  volumes.forEach((volume, index) => {
+    const isHeader = volume.includes('{') || volume.includes('!');
+    if (isHeader) {headCounter++; currentHeader={type:'header',text:volume.replace(/{|}|!/g,'')};processedItems.push(currentHeader)} 
+    else {itemCounter++; processedItems.push({type:'item',text:volume,index:index+1-headCounter,itemNumber:itemCounter,header:currentHeader})}
+  });
+  // Now split into pages
+  const tocPages = [];
+  let currentPageItems=[],currentItemCount=0,pageNumber=0,lastHeader=null;
+
+  processedItems.forEach(item => {
+    if(item.type==='header'){lastHeader = item;} 
+    else{currentItemCount++;
+      if (currentItemCount > itemsPerPage) {
+        tocPages.push(createTOCPage(currentPageItems,pageNumber,tableId));
+        currentPageItems = [];
+        if (item.header) {currentPageItems.push(item.header)}
+        currentItemCount = 1;pageNumber++;
+      }
+    }
+    if (item.type==='item' && item.header && item.header !== lastHeader){currentPageItems.push(item.header);lastHeader=item.header}
+    currentPageItems.push(item);
+  });
+  // Add the last page if it has content
+  if(currentPageItems.length>0){tocPages.push(createTOCPage(currentPageItems, pageNumber,tableId))}
+  return tocPages;
+}
+
+function createTOCPage(items, pageNumber, tableId) {
+  let tocHTML = `<div><a style="display:none">สารบัญ</a>
+  <div class="column-2"><ul class="no-style">`;
+
+  const seenHeaders = new Set(); 
+
+
+  items.forEach(item => {
+    if (item.type === 'header') {
+      if (!seenHeaders.has(item.text)) {
+        tocHTML += `<h3>${item.text}</h3>`;
+        seenHeaders.add(item.text);
+    }} 
+    else { 
+		tocHTML += `
+<li class="li-style">
+    <a href="#" onclick="event.preventDefault();goToVolumeFromTOC(${item.index},${tableId})" 
+    class="text-blue text-red number-${String(item.itemNumber).length}">
+        ${item.itemNumber}. ${item.text}
+    </a>
+</li>
+        `;
+    }
+  });
+  tocHTML += `</ul></div>`;
+  
+  return {volume:0,page:pageNumber,item:"",content: tocHTML}
+}
+
+function goToVolumeFromTOC(volume, tableId) {
+  if (!tables[tableId]) return;
+  const allData = tables[tableId].getData();
+  for (let i=0;i<allData.length;i++) {
+    const row = allData[i];
+    if (row.volume === volume) {
+      const scrollPos = tables[tableId].element.scrollTop;
+      tables[tableId].setPage(i+1);
+      updateHeaderTitle(tableId);
+	  setTimeout(() => {tables[tableId].element.scrollTop = scrollPos;}, 50);
+      return;
+    }
+  }
+
+  console.warn("Could not find volume", volume);
+}
+
+function createGlossaryContent(tableId, itemsPerPage=60) {
+  const glossaryTerms = index.term.sort(()=>0.5-Math.random()).slice(0,500);
+  if (!glossaryTerms || glossaryTerms.length === 0) return [];
+  
+  // Group terms by first letter
+  const groupedTerms = {};
+  glossaryTerms.forEach(term => {
+    const firstLetter = term.charAt(0).toUpperCase();
+    if (!groupedTerms[firstLetter]) {groupedTerms[firstLetter] = []}
+    groupedTerms[firstLetter].push(term);
+  });
+
+  // Sort letters and prepare all items
+  const letters = Object.keys(groupedTerms).sort();
+  const allItems = [];
+  
+  letters.forEach(letter => {
+    allItems.push({type: 'header', text: letter});
+    groupedTerms[letter].forEach(term => {
+      allItems.push({type: 'term', text: term});
+    });
+  });
+
+  // Split into pages
+  const glossaryPages = [];
+  let currentPageItems = [];
+  let currentItemCount = 0;
+  let pageNumber = 0;
+  let lastHeader = null;
+
+  allItems.forEach(item => {
+    if (item.type === 'header') {
+      lastHeader = item;
+      // If adding this header would exceed the page, create a new page first
+      if (currentItemCount >= itemsPerPage) {
+        glossaryPages.push(createGlossaryPage(currentPageItems, pageNumber, tableId));
+        currentPageItems = [], currentItemCount = 0, pageNumber++;
+      }
+    } else {
+      currentItemCount++;
+      // If adding this term would exceed the page, create a new page
+      if (currentItemCount > itemsPerPage) {
+        glossaryPages.push(createGlossaryPage(currentPageItems, pageNumber, tableId));
+        currentPageItems = [];
+        if (lastHeader) currentPageItems.push(lastHeader);
+        currentItemCount = 1, pageNumber++;
+      }
+    }
+    currentPageItems.push(item);
+  });
+
+  // Add the last page if it has content
+  if (currentPageItems.length > 0) {
+    glossaryPages.push(createGlossaryPage(currentPageItems, pageNumber, tableId));
+  }
+
+  return glossaryPages;
+}
+
+function createGlossaryPage(items, pageNumber, tableId) {
+  let glossaryHTML = `<div"><a style="display:none">อภิธานศัพท์</a>
+  <div class="column-3"><ul class="no-style">`;
+
+  const seenHeaders = new Set(); // Track headers to avoid duplicates
+
+  items.forEach(item => {
+    if (item.type === 'header') {
+      if (!seenHeaders.has(item.text)) {
+        glossaryHTML += `<h3>${item.text}</h3>`;
+        seenHeaders.add(item.text);
+      }
+    } else if (item.type === 'term') {
+      glossaryHTML += `<li style="margin-bottom:5px;">
+        <a href="#" onclick="event.preventDefault();filterTable(${tableId},'${item.text}')" 
+           class="text-blue text-red"> ${item.text} </a></li>`;
+    }
+  });
+
+  glossaryHTML += `</ul></div>`;
+
+  return {volume:0,page:pageNumber,items:"",content:glossaryHTML}
+}
+
+function setTable(id,dat,vol){
+  if(tables[id]){tables[id].destroy()}
+  tableHead[id]=dat[2]
+  //loadGzippedJson("./books/"+dat[0]+".json.gz").then(json => { 
+  //loadLzmaJson("./books/"+dat[0]+".json.lzma").then(json => { console.log(json.length)
+  loadZippedJson("./"+dat[0]+".zip").then(json => { console.log(json.length)
+  document.getElementById('loading').style.display = 'none';
+  const tocData = createTOCContent(tableHead[id],id);
+  const glossaryData = createGlossaryContent(id);
+    let tableData = [...tocData,...json,...glossaryData]
+	//if(glossaryData.length>0){tableData.push(...glossaryData)}  
+	tables[id] = new Tabulator("#table"+id,{data:tableData,renderVertical:"virtual",
+	locale:true,langs:langs(),layout:layout,
+	pagination:"local",paginationSize:1,paginationSizeSelector:false,paginationButtonCount:0,
+	//paginationCounter:"pages",
+	paginationCounter:paginationCounter,
+	  columns:[column(id,dat[1]),],//{items(),title:"เล่ม",field:"volume",width:'7px'},{title:"หน้า",field:"page",width:'7px'},
+	  footerElement:
+	  '<select class="my-select" onchange=switchTable('+id+',this.value)>'+
+	  selectBooks +
+	  '<input type="text" placeholder="ค้นหา" style="width:100px" onchange="debounce(()=>filterTable('+id+',this.value))()">'+
+	  '<button class="clear-filter" onclick=this.previousElementSibling.value="";filterTable('+id+',"")>X</button>&nbsp;'
+
+	})
+  tables[id].on("tableBuilt", function(){updateHeaderTitle(id)})
+  tables[id].on("pageLoaded", function(){updateHeaderTitle(id)})
+  tables[id].on("dataFiltered",function(){updateHeaderTitle(id)})
+  })	
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
