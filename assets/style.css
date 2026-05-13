@@ -1,0 +1,31 @@
+html,body {overflow:auto;height:100%;margin:0;padding:0;}
+div {margin:0;padding:0;}
+h3 {margin:0;padding-bottom:5px;padding-top:5px;}
+.container {overflow:auto;display:flex;position:relative;width:100%;min-height:100vh;background-color:rgba(0,0,0,0.5);}
+.no-style {list-style-type:none;padding-left:0;line-height:1.2;}
+.li-style {margin-bottom:5px}
+.li-style a {display: block;position: relative;}
+.li-style a.number-1 {text-indent: -1.25em;padding-left: 1.25em;}
+.li-style a.number-2 {text-indent: -1.75em;padding-left: 1.75em;}
+.li-style a.number-3 {text-indent: -2.50em;padding-left: 2.50em;}
+.text-blue {text-decoration:none;color:blue;cursor:pointer;}
+.text-red:hover {color:red}
+.clear-filter {margin-left:-18px; border:none; background:none; cursor:pointer}
+.clear-filter:hover {color: red;cursor: pointer;}
+.column-2 {margin:0.5em;column-count:2;column-gap:1em;line-height:1.2;}
+.column-3 {margin:0.5em;column-count:3;column-gap:1em;}
+.left, .right {width:50%;overflow-y:auto;}
+.my-select {height: 20px;width: 40px;overflow: hidden;}
+.my-select:focus {outline: none;}
+.tabulator {overflow-x:hidden;overflow-y:auto;width:100% !important;height:100% !important;font-family:THSarabunNew,sans-serif;font-size:15px;font-weight:bold;}
+.tabulator {background-color: rgba(255,255,255,1);display: flex;flex-direction: column;}
+.tabulator-row:hover {background-color:#fffaeb !important;}
+.tabulator-header {height:50px;display:flex;align-items:center;justify-content: center;}
+.tabulator-footer {height:30px;display:flex;align-items:center}
+.tabulator .tabulator-footer .tabulator-page-counter{font-weight:500}
+.tabulator-page[data-page="first"],.tabulator-page[data-page="last"] {display:inline !important;}
+.tabulator-cell {white-space: normal !important;word-wrap: break-word !important;}
+#table0, #table1 {overflow:hidden;width:50%;height:100vh;}
+#table0 .tabulator-header .tabulator-col  {background-color:darkred ;color:yellow;font-weight:normal;font-size:large}
+#table1 .tabulator-header .tabulator-col  {background-color:navy    ;color:white; font-weight:normal;font-size:large}
+.inverted-image {filter: invert(100%);}
